@@ -18,7 +18,7 @@ services:
           capacity: 10
   hello-agent:
     host: azure.ai.agent
-    project: samples/dotnet/hello-hosted-agent
+    project: samples/hello-hosted-agent
     language: csharp
     codeConfiguration:
       runtime: dotnet_10
