@@ -1,0 +1,16 @@
+.env
+.env.*
+.azure/
+bin/
+obj/
+TestResults/
+*.user
+*.pfx
+*.pem
+*.key
+*.pptx
+*.ppt
+*.pdf
+slides/
+speaker-notes/
+demo-notes/

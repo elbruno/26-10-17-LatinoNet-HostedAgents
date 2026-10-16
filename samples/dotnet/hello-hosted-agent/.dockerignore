@@ -1,0 +1,9 @@
+bin/
+obj/
+.git/
+.azure/
+.env
+.env.*
+*.pfx
+*.pem
+*.key
