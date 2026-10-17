@@ -10,6 +10,8 @@ Configurar `FOUNDRY_PROJECT_ENDPOINT`, `AZURE_AI_MODEL_DEPLOYMENT_NAME` y
 `BLOB_CONTAINER_URI` (`https://<account>.blob.core.windows.net/<container>`,
 sin SAS ni query). Subir previamente un documento de demo como `agenda.txt`
 con `Content-Type: text/plain; charset=utf-8`.
+El nombre de deployment es opcional: si falta, usa `gpt-6-luna` ya existente.
+Un valor explícito en configuración conserva prioridad.
 
 La identidad necesita Storage Blob Data Reader con alcance del contenedor
 autorizado. No usar contenedores de información privada para esta demo ni

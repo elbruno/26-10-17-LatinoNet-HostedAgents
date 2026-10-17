@@ -14,6 +14,8 @@ criptográficamente aleatorio de al menos 32 caracteres, almacenado fuera de Git
 conocido solo por la aplicación/humano que aprueba. No ponerlo en prompts, URLs,
 logs ni capturas. Configurarlo en User Secrets o en el mecanismo secreto del
 runtime, y conservarlo por separado en el cliente humano que confirma.
+El nombre de deployment es opcional: si falta, usa `gpt-6-luna` ya existente.
+Un valor explícito en configuración conserva prioridad.
 
 La identidad requiere Azure Service Bus Data Sender al alcance de la cola.
 Crear la cola con **duplicate detection habilitado**. Cada mensaje usa el ID

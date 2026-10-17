@@ -23,7 +23,7 @@ var jobs = new JobTools(async (id, payload, cancellationToken) =>
     await sender.SendMessageAsync(new ServiceBusMessage(payload) { MessageId = id, ContentType = "application/json" }, cancellationToken));
 // B. ConfirmAsync NO forma parte de este catalogo de tools.
 var agent = new AIProjectClient(HostedSettings.HttpsUri(configuration, "FOUNDRY_PROJECT_ENDPOINT"), credential)
-    .AsAIAgent(model: HostedSettings.Required(configuration, "AZURE_AI_MODEL_DEPLOYMENT_NAME"),
+    .AsAIAgent(model: HostedSettings.Deployment(configuration),
         name: "LatinoNetQueueAgent",
         instructions: "Solo puedes proponer trabajos ficticios. Devuelve el identificador y explica que falta confirmacion humana fuera del chat. No afirmes que se envio ni ejecuto y nunca pidas el token de aprobacion.",
         tools: [AIFunctionFactory.Create(jobs.ProposeAsync)]);

@@ -21,7 +21,7 @@ var projectEndpoint = new Uri(
     configuration["FOUNDRY_PROJECT_ENDPOINT"]
     ?? throw new InvalidOperationException("FOUNDRY_PROJECT_ENDPOINT is not set."));
 var deployment = configuration["AZURE_AI_MODEL_DEPLOYMENT_NAME"]
-    ?? throw new InvalidOperationException("AZURE_AI_MODEL_DEPLOYMENT_NAME is not set.");
+    ?? "gpt-6-luna"; ArgumentException.ThrowIfNullOrWhiteSpace(deployment, "AZURE_AI_MODEL_DEPLOYMENT_NAME");
 
 var project = new AIProjectClient(projectEndpoint, new DefaultAzureCredential());
 // B. El revisor recibe el borrador del escritor; no son dos llamadas independientes.

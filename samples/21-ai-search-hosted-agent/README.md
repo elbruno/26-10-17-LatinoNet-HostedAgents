@@ -7,6 +7,8 @@ El modelo recibe solo la consulta, nunca un filtro o grupo que pueda modificar.
 
 Configurar `FOUNDRY_PROJECT_ENDPOINT`, `AZURE_AI_MODEL_DEPLOYMENT_NAME`,
 `AZURE_SEARCH_ENDPOINT`, `AZURE_SEARCH_INDEX` y `SEARCH_ALLOWED_GROUP`.
+El nombre de deployment es opcional: si falta, usa `gpt-6-luna` ya existente.
+Un valor explícito en configuración conserva prioridad.
 Preparar un índice con estos campos:
 
 | Campo | Tipo / atributos |

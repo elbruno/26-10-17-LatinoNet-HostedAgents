@@ -68,7 +68,7 @@ try {
     if ($state.calls.Count -ne 2 -or $state.answers.Count -ne 0 -or
         $state.prompts.Count -ne 2 -or
         $state.prompts[0] -notmatch 'Endpoint del proyecto Foundry' -or
-        $state.prompts[1] -notmatch 'Nombre del deployment.*\[gpt-6\.1-sol\]') {
+        $state.prompts[1] -notmatch 'Nombre del deployment.*\[gpt-6-luna\]') {
         throw 'Se debe preguntar una vez y configurar solo los dos proyectos con UserSecretsId.'
     }
     foreach ($call in $state.calls) {
@@ -103,12 +103,12 @@ try {
         if ($state.calls.Count -ne 2) { throw 'No se configuraron ambos proyectos con el deployment por defecto.' }
         foreach ($call in $state.calls) {
             $values = $call.payload | ConvertFrom-Json
-            if ($values.AZURE_AI_MODEL_DEPLOYMENT_NAME -ne 'gpt-6.1-sol') {
-                throw 'Enter o espacios deben seleccionar gpt-6.1-sol.'
+            if ($values.AZURE_AI_MODEL_DEPLOYMENT_NAME -ne 'gpt-6-luna') {
+                throw 'Enter o espacios deben seleccionar gpt-6-luna.'
             }
         }
     }
-    Write-Output 'PASS: Enter o espacios seleccionan gpt-6.1-sol en todos los proyectos'
+    Write-Output 'PASS: Enter o espacios seleccionan gpt-6-luna en todos los proyectos'
 
     Set-Answers 'https://example.invalid/api/projects/demo' 'invalid deployment'
     Invoke-Setup $false 'Deployment invalido'

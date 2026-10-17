@@ -32,6 +32,11 @@ try {
             $project.BaseName -notmatch '^\d{2}-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$') {
             throw "Cada carpeta y proyecto de sample deben compartir numero y descripcion: $($project.FullName)"
         }
+        $program = Get-Content (Join-Path $project.Directory.FullName 'Program.cs') -Raw
+        if (-not $program.Contains('?? "gpt-6-luna"') -and
+            -not $program.Contains('HostedSettings.Deployment(configuration)')) {
+            throw "El sample debe usar gpt-6-luna por defecto y respetar configuracion explicita: $($project.BaseName)"
+        }
     }
     $teachingFiles = @(Get-ChildItem .\samples, .\scripts, .\tests -Recurse -File |
         Where-Object {

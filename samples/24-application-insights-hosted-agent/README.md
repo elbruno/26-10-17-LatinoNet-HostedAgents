@@ -16,8 +16,12 @@ dotnet user-secrets set APPLICATIONINSIGHTS_CONNECTION_STRING "<connection-strin
 dotnet run
 ```
 
-Las tres claves tambien admiten variables de entorno. La conexion de Application
-Insights es obligatoria: no se inicia silenciosamente sin exporter.
+Las tres claves tambien admiten variables de entorno.
+El endpoint y la conexion de Application Insights son obligatorios. El deployment
+es opcional: si no se configura, usa el deployment existente `gpt-6-luna`.
+Un valor explicito tiene prioridad; un valor vacio o solo espacios es invalido.
+No crea ni modifica deployments.
+No se inicia silenciosamente sin exporter.
 La identidad de `DefaultAzureCredential` necesita acceso al proyecto y al modelo.
 El host publica `/responses` y `/health` en `PORT` (8088 por defecto).
 La exportacion necesita conectividad saliente al endpoint de ingestion.

@@ -85,7 +85,7 @@ dotnet run --project .\samples\10-hello-hosted-agent
 
 El script muestra campos de entrada normales, no ocultos, para pedir una sola vez
 el **endpoint del proyecto Foundry** y el **nombre del deployment del modelo**,
-proponiendo **`gpt-6.1-sol`** como deployment por defecto: presionar Enter lo acepta,
+proponiendo **`gpt-6-luna`** como deployment por defecto: presionar Enter lo acepta,
 o escribir otro nombre para reemplazarlo. Debe existir con ese nombre en tu proyecto.
 Aplica ambos valores a todos los
 `.csproj` bajo `samples` que tengan `UserSecretsId`. No pide API keys ni passwords:
@@ -106,6 +106,11 @@ El sample carga estos valores explícitamente, también al correr un build Relea
 
 Como alternativa, configurar variables de entorno solo en la terminal. Tienen
 prioridad sobre User Secrets, lo que conserva el funcionamiento en Foundry.
+Si `AZURE_AI_MODEL_DEPLOYMENT_NAME` no está configurado, todos los samples
+usan el deployment existente **`gpt-6-luna`**. No se crea ni se comprueba ese
+deployment al arrancar. Una configuración explícita, incluso en User Secrets
+de una sesión anterior, sigue prevaleciendo sobre el default. Para cambiarla
+en todos los proyectos, repetir el script y aceptar `gpt-6-luna`.
 Los siguientes valores son marcadores, no endpoints reales:
 
 ```powershell
@@ -179,6 +184,12 @@ azd ai agent doctor --local-only
 ```
 
 La plantilla declara un proyecto Foundry y el modelo `gpt-5.4-mini`, versión `2026-03-17`. Antes de provisionar, comprobar disponibilidad regional, cuota, suscripción, permisos y costos. No asumir que un proyecto existente queda enlazado solo por establecer una variable; seguir la documentación de despliegue para reutilizar recursos.
+Ese es el modelo de catálogo de la plantilla, no el default del código.
+Por decisión del usuario, `gpt-6-luna` es un **deployment ya existente**:
+no se inventó una versión de catálogo ni se modificaron los manifiestos para
+aprovisionar un modelo con ese nombre. Para usarlo remotamente, vincular el
+proyecto que lo contiene y configurar `AZURE_AI_MODEL_DEPLOYMENT_NAME=gpt-6-luna`
+en ese entorno de `azd`, sin provisionar el modelo de la plantilla por error.
 
 Solo después de revisar el entorno:
 

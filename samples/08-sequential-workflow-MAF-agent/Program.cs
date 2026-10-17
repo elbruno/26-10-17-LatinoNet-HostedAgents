@@ -15,7 +15,7 @@ var configuration = new ConfigurationBuilder()
 var endpoint = configuration["FOUNDRY_PROJECT_ENDPOINT"]
     ?? throw new InvalidOperationException("FOUNDRY_PROJECT_ENDPOINT is not set.");
 var deployment = configuration["AZURE_AI_MODEL_DEPLOYMENT_NAME"]
-    ?? throw new InvalidOperationException("AZURE_AI_MODEL_DEPLOYMENT_NAME is not set.");
+    ?? "gpt-6-luna";
 
 // A. Cada agente tiene una responsabilidad distinta en el mismo proceso.
 var project = new AIProjectClient(new Uri(endpoint), new AzureCliCredential());

@@ -8,6 +8,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\samples\shared\HostedSettings.cs" Link="HostedSettings.cs" />
     <ProjectReference Include="..\..\samples\20-keyvault-hosted-agent\20-keyvault-hosted-agent.csproj" />
     <ProjectReference Include="..\..\samples\21-ai-search-hosted-agent\21-ai-search-hosted-agent.csproj" />
     <ProjectReference Include="..\..\samples\22-blob-storage-hosted-agent\22-blob-storage-hosted-agent.csproj" />

@@ -17,7 +17,7 @@ var projectEndpoint = new Uri(
     configuration["FOUNDRY_PROJECT_ENDPOINT"]
     ?? throw new InvalidOperationException("FOUNDRY_PROJECT_ENDPOINT is not set."));
 var deployment = configuration["AZURE_AI_MODEL_DEPLOYMENT_NAME"]
-    ?? throw new InvalidOperationException("AZURE_AI_MODEL_DEPLOYMENT_NAME is not set.");
+    ?? "gpt-6-luna";
 
 // B. Este bloque es el que conservaremos al pasar al host del ejemplo 10.
 AIAgent agent = new AIProjectClient(projectEndpoint, new AzureCliCredential())

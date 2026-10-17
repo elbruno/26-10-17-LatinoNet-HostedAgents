@@ -17,7 +17,7 @@ var configuration = new ConfigurationBuilder()
 var endpoint = configuration["FOUNDRY_PROJECT_ENDPOINT"]
     ?? throw new InvalidOperationException("FOUNDRY_PROJECT_ENDPOINT is not set.");
 var deployment = configuration["AZURE_AI_MODEL_DEPLOYMENT_NAME"]
-    ?? throw new InvalidOperationException("AZURE_AI_MODEL_DEPLOYMENT_NAME is not set.");
+    ?? "gpt-6-luna";
 
 AIAgent agent = new AIProjectClient(new Uri(endpoint), new AzureCliCredential())
     .AsAIAgent(model: deployment, instructions: "Extrae solo los datos presentes en la solicitud.", name: "StructuredAgent");

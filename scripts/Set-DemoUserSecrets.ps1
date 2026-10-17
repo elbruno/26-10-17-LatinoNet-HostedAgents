@@ -25,7 +25,7 @@ if ($projects.Count -eq 0) {
 Write-Host "Se configuraran $($projects.Count) proyectos con User Secrets."
 Write-Host 'Usar el endpoint del proyecto Foundry y el nombre del deployment, no el nombre del modelo del catalogo.'
 $endpoint = (Read-Host 'Endpoint del proyecto Foundry (https://.../api/projects/...)').Trim()
-$defaultDeployment = 'gpt-6.1-sol'
+$defaultDeployment = 'gpt-6-luna'
 $deployment = (Read-Host "Nombre del deployment del modelo [$defaultDeployment] (Enter para usarlo)").Trim()
 if ([string]::IsNullOrWhiteSpace($deployment)) {
     $deployment = $defaultDeployment

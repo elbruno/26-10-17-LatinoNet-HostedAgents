@@ -11,9 +11,11 @@ using Azure.Search.Documents;
 using Azure.Security.KeyVault.Secrets;
 using Azure.Storage.Blobs;
 using LatinoNet.Blobs;
+using LatinoNet.Hosted;
 using LatinoNet.Jobs;
 using LatinoNet.KeyVault;
 using LatinoNet.Search;
+using Microsoft.Extensions.Configuration;
 
 static void Check(bool passed, string message)
 {
@@ -25,6 +27,14 @@ static async Task Reject<T>(Func<Task> action) where T : Exception
     catch (T) { return; }
     throw new InvalidOperationException($"Expected {typeof(T).Name}.");
 }
+
+var defaults = new ConfigurationBuilder().AddInMemoryCollection().Build();
+Check(HostedSettings.Deployment(defaults) == "gpt-6-luna", "Missing deployment must use gpt-6-luna.");
+defaults["AZURE_AI_MODEL_DEPLOYMENT_NAME"] = "explicit-deployment";
+Check(HostedSettings.Deployment(defaults) == "explicit-deployment", "Explicit deployment must override the default.");
+defaults["AZURE_AI_MODEL_DEPLOYMENT_NAME"] = " ";
+await Reject<InvalidOperationException>(() => { HostedSettings.Deployment(defaults); return Task.CompletedTask; });
+Console.WriteLine("PASS: deployment default gpt-6-luna, explicit override and invalid configured value.");
 
 var credential = new OfflineCredential();
 const string fakeSecret = "offline-test-key";

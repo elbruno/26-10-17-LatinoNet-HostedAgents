@@ -15,8 +15,11 @@ dotnet user-secrets set AZURE_AI_MODEL_DEPLOYMENT_NAME "<deployment>"
 dotnet run
 ```
 
-Tambien admite variables de entorno con esos mismos nombres. Usa
-`DefaultAzureCredential`: la identidad necesita acceso al proyecto y al modelo.
+Tambien admite variables de entorno con esos mismos nombres.
+El endpoint es obligatorio. El deployment es opcional: si no se configura,
+usa el deployment existente `gpt-6-luna`. Un valor explicito tiene prioridad;
+un valor vacio o solo espacios es invalido. No crea ni modifica deployments.
+Usa `DefaultAzureCredential`: la identidad necesita acceso al proyecto y al modelo.
 El modelo debe admitir function calling. El host publica `/responses` y `/health`
 en el puerto `PORT` (8088 por defecto).
 

@@ -25,7 +25,7 @@ var projectEndpoint = new Uri(
     configuration["FOUNDRY_PROJECT_ENDPOINT"]
     ?? throw new InvalidOperationException("FOUNDRY_PROJECT_ENDPOINT is not set."));
 var deployment = configuration["AZURE_AI_MODEL_DEPLOYMENT_NAME"]
-    ?? throw new InvalidOperationException("AZURE_AI_MODEL_DEPLOYMENT_NAME is not set.");
+    ?? "gpt-6-luna"; ArgumentException.ThrowIfNullOrWhiteSpace(deployment, "AZURE_AI_MODEL_DEPLOYMENT_NAME");
 
 // B. El wrapper crea spans MAF sin habilitar captura de prompts ni completions.
 AIAgent agent = ApplicationInsightsTelemetry.Wrap(

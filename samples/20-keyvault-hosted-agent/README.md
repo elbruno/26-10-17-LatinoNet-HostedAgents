@@ -10,6 +10,8 @@ Configurar `FOUNDRY_PROJECT_ENDPOINT`, `AZURE_AI_MODEL_DEPLOYMENT_NAME`,
 `KEY_VAULT_URI` (`https://<vault>.vault.azure.net`),
 `WORKSHOP_API_SECRET_NAME` y `WORKSHOP_API_ENDPOINT` (URL HTTPS completa del
 endpoint de presupuesto, sin query, fragmento ni credenciales).
+El nombre de deployment es opcional: si falta, usa `gpt-6-luna` ya existente.
+Un valor explícito en configuración conserva prioridad.
 
 El catálogo es una **dependencia externa que debes proporcionar**, no un servicio
 incluido ni un endpoint Azure inventado. Contrato de demo: POST con JSON

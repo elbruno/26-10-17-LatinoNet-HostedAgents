@@ -23,7 +23,7 @@ var catalog = new WorkshopCatalogTool(
     HostedSettings.HttpsUri(configuration, "WORKSHOP_API_ENDPOINT"), http);
 // B. El modelo puede pedir asistentes, pero no elegir el vault, secreto o destino HTTP.
 var agent = new AIProjectClient(HostedSettings.HttpsUri(configuration, "FOUNDRY_PROJECT_ENDPOINT"), credential)
-    .AsAIAgent(model: HostedSettings.Required(configuration, "AZURE_AI_MODEL_DEPLOYMENT_NAME"),
+    .AsAIAgent(model: HostedSettings.Deployment(configuration),
         name: "LatinoNetKeyVaultAgent",
         instructions: "Consulta presupuestos de taller con la tool. No realizas cobros ni reservas. Nunca pidas ni reveles secretos.",
         tools: [AIFunctionFactory.Create(catalog.GetBudgetAsync)]);

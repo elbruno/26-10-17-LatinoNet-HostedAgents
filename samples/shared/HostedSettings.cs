@@ -14,6 +14,11 @@ internal static class HostedSettings
             ? configuration[name]!
             : throw new InvalidOperationException($"{name} is required.");
 
+    public static string Deployment(IConfiguration configuration) =>
+        configuration["AZURE_AI_MODEL_DEPLOYMENT_NAME"] is null
+            ? "gpt-6-luna"
+            : Required(configuration, "AZURE_AI_MODEL_DEPLOYMENT_NAME");
+
     public static Uri HttpsUri(IConfiguration configuration, string name)
     {
         var value = Required(configuration, name);
