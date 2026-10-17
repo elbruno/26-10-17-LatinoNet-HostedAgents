@@ -1,4 +1,8 @@
 #requires -Version 7.0
+# Tests del preflight sin instalar herramientas ni consultar Azure.
+# A. Simular salidas de azd y del SDK.
+# B. Ejercitar versiones validas, prereleases y entradas incorrectas.
+# C. Exigir fallos explicitos sin modificar la instalacion real.
 $ErrorActionPreference = 'Stop'
 $state = @{
     coreVersion = '1.34.1'

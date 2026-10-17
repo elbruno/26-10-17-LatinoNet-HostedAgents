@@ -1,0 +1,16 @@
+<!-- 20: host con cliente de secretos en el backend.
+     A. Seleccionar SDK Web e ID local. B. Fijar Foundry y Key Vault. C. Enlazar validacion compartida. -->
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>latinonet-2026-20-keyvault-hosted-agent</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Agents.AI.Foundry.Hosting" Version="1.22.0-preview.260918.1" />
+    <PackageReference Include="Azure.AI.Projects" Version="3.0.0-beta.2" />
+    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.8.0" />
+    <Compile Include="..\shared\HostedSettings.cs" Link="HostedSettings.cs" />
+  </ItemGroup>
+</Project>

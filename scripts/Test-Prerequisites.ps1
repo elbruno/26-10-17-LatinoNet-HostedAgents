@@ -1,4 +1,8 @@
 #requires -Version 7.0
+# Preflight de herramientas: consulta versiones, no instala ni actualiza.
+# A. Leer los minimos declarados por azure.yaml.
+# B. Comparar azd y la extension realmente instalada, no la version del catalogo.
+# C. Exigir SDK estable compatible y comunicar limites de esta comprobacion.
 [CmdletBinding()]
 param()
 

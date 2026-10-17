@@ -1,3 +1,7 @@
+// Cliente simulado compartido por tests: nunca realiza inferencia ni llamadas Azure.
+// A. Registrar las entradas del framework para poder comprobarlas.
+// B. Generar respuestas deterministas mediante la funcion proporcionada por el test.
+// C. Adaptar esas respuestas a streaming y respetar la cancelacion.
 using System.Runtime.CompilerServices;
 using Microsoft.Extensions.AI;
 

@@ -1,0 +1,18 @@
+<!-- 08: consola con workflow secuencial.
+     A. Seleccionar .NET 10. B. Identificar User Secrets locales. C. Fijar MAF y Workflows compatibles. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>latinonet-2026-08-demo</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Agents.AI.Foundry" Version="1.22.0-preview.260918.1" />
+    <PackageReference Include="Microsoft.Agents.AI.Workflows" Version="1.22.0" />
+    <PackageReference Include="Azure.AI.Projects" Version="3.0.0-beta.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="10.0.0" />
+  </ItemGroup>
+</Project>

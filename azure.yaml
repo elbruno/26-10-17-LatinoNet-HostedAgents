@@ -1,4 +1,8 @@
 # Based on the Microsoft Foundry C# Hosted Agent hello-world sample.
+# 10: despliegue del agente minimo, no de todos los ejemplos.
+# A. Exigir versiones de herramientas compatibles.
+# B. Declarar proyecto Foundry y deployment del modelo.
+# C. Alojar Responses; los permisos externos no se conceden automaticamente.
 requiredVersions:
   azd: '>=1.27.1'
   extensions:
@@ -18,11 +22,11 @@ services:
           capacity: 10
   hello-agent:
     host: azure.ai.agent
-    project: samples/hello-hosted-agent
+    project: samples/10-hello-hosted-agent
     language: csharp
     codeConfiguration:
       runtime: dotnet_10
-      entryPoint: hello-agent.dll
+      entryPoint: 10-hello-hosted-agent.dll
     docker:
       path: Dockerfile
       remoteBuild: true

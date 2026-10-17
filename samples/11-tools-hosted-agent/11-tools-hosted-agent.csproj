@@ -1,0 +1,15 @@
+<!-- 11: host de tools sin duplicar la logica del presupuesto.
+     A. Seleccionar SDK Web. B. Fijar hosting y configuracion. C. Enlazar WorkshopTools desde 04. -->
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>latinonet-2026-hosted-agents-tools-65ef8dc9</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Agents.AI.Foundry.Hosting" Version="1.22.0-preview.260918.1" />
+    <PackageReference Include="Azure.AI.Projects" Version="3.0.0-beta.2" />
+    <Compile Include="..\04-tools-MAF-agent\WorkshopTools.cs" Link="WorkshopTools.cs" />
+  </ItemGroup>
+</Project>

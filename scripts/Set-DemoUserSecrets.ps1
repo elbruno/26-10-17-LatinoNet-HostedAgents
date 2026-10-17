@@ -1,4 +1,8 @@
 #requires -Version 7.0
+# Configurar los valores Foundry de todos los proyectos, sin escribirlos en Git.
+# A. Descubrir proyectos con UserSecretsId y pedir endpoint/deployment una sola vez.
+# B. Validar ambos valores y enviarlos a dotnet user-secrets por stdin.
+# C. Conservar las demas claves; este script no configura azd ni concede permisos.
 [CmdletBinding()]
 param()
 
@@ -21,7 +25,11 @@ if ($projects.Count -eq 0) {
 Write-Host "Se configuraran $($projects.Count) proyectos con User Secrets."
 Write-Host 'Usar el endpoint del proyecto Foundry y el nombre del deployment, no el nombre del modelo del catalogo.'
 $endpoint = (Read-Host 'Endpoint del proyecto Foundry (https://.../api/projects/...)').Trim()
-$deployment = (Read-Host 'Nombre del deployment del modelo').Trim()
+$defaultDeployment = 'gpt-6.1-sol'
+$deployment = (Read-Host "Nombre del deployment del modelo [$defaultDeployment] (Enter para usarlo)").Trim()
+if ([string]::IsNullOrWhiteSpace($deployment)) {
+    $deployment = $defaultDeployment
+}
 
 $uri = $null
 if (-not [Uri]::TryCreate($endpoint, [UriKind]::Absolute, [ref]$uri) -or
@@ -48,5 +56,5 @@ foreach ($project in $projects) {
 }
 
 Write-Host 'Listo. Los demas secretos existentes se conservan. No se escribieron valores en el repositorio.'
-Write-Host 'No se necesita API key: el agente usa DefaultAzureCredential. Autenticar con az login antes de invocar el modelo.'
+Write-Host 'No se necesita API key: las consolas usan AzureCliCredential. Autenticar con az login antes de invocar el modelo.'
 Write-Host 'Las variables de entorno tienen prioridad sobre User Secrets. Este script no configura el entorno de despliegue de azd.'

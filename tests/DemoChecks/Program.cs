@@ -1,3 +1,7 @@
+// Checks offline de 01 a 09: ejercen MAF con respuestas controladas, no con Foundry.
+// A. Construir agentes con ScriptedChatClient.
+// B. Comprobar streaming, sesiones, tools, contratos y workflows reales del framework.
+// C. Verificar observabilidad y cancelacion, propagando cualquier fallo.
 using LatinoNet.DemoChecks;
 using LatinoNet.Demos;
 using Microsoft.Agents.AI;

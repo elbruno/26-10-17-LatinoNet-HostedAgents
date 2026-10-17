@@ -1,0 +1,16 @@
+<!-- 12: host del workflow escritor/revisor.
+     A. Seleccionar SDK Web. B. Fijar hosting y Workflows. C. Enlazar AgendaWorkflow desde 08. -->
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>latinonet-2026-hosted-agents-sequential-14726c35</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Agents.AI.Foundry.Hosting" Version="1.22.0-preview.260918.1" />
+    <PackageReference Include="Microsoft.Agents.AI.Workflows" Version="1.22.0" />
+    <PackageReference Include="Azure.AI.Projects" Version="3.0.0-beta.2" />
+    <Compile Include="..\08-sequential-workflow-MAF-agent\AgendaWorkflow.cs" Link="AgendaWorkflow.cs" />
+  </ItemGroup>
+</Project>

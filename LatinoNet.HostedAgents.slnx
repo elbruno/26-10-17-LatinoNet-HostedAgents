@@ -1,17 +1,28 @@
+<!-- Solucion didactica completa.
+     A. Agrupar los diecisiete samples. B. Incluir tres harnesses offline. C. Abrir o compilar sin ejecutar Azure. -->
 <Solution>
   <Folder Name="/samples/">
-    <Project Path="samples/01-demo/01-demo.csproj" />
-    <Project Path="samples/02-demo/02-demo.csproj" />
-    <Project Path="samples/03-demo/03-demo.csproj" />
-    <Project Path="samples/04-demo/04-demo.csproj" />
-    <Project Path="samples/05-demo/05-demo.csproj" />
-    <Project Path="samples/06-demo/06-demo.csproj" />
-    <Project Path="samples/07-demo/07-demo.csproj" />
-    <Project Path="samples/08-demo/08-demo.csproj" />
-    <Project Path="samples/09-demo/09-demo.csproj" />
-    <Project Path="samples/hello-hosted-agent/hello-agent.csproj" />
+    <Project Path="samples/01-basic-MAF-agent/01-basic-MAF-agent.csproj" />
+    <Project Path="samples/02-streaming-MAF-agent/02-streaming-MAF-agent.csproj" />
+    <Project Path="samples/03-sessions-MAF-agent/03-sessions-MAF-agent.csproj" />
+    <Project Path="samples/04-tools-MAF-agent/04-tools-MAF-agent.csproj" />
+    <Project Path="samples/05-structured-output-MAF-agent/05-structured-output-MAF-agent.csproj" />
+    <Project Path="samples/06-middleware-MAF-agent/06-middleware-MAF-agent.csproj" />
+    <Project Path="samples/07-agent-as-tool-MAF-agent/07-agent-as-tool-MAF-agent.csproj" />
+    <Project Path="samples/08-sequential-workflow-MAF-agent/08-sequential-workflow-MAF-agent.csproj" />
+    <Project Path="samples/09-telemetry-MAF-agent/09-telemetry-MAF-agent.csproj" />
+    <Project Path="samples/10-hello-hosted-agent/10-hello-hosted-agent.csproj" />
+    <Project Path="samples/11-tools-hosted-agent/11-tools-hosted-agent.csproj" />
+    <Project Path="samples/12-sequential-workflow-hosted-agent/12-sequential-workflow-hosted-agent.csproj" />
+    <Project Path="samples/20-keyvault-hosted-agent/20-keyvault-hosted-agent.csproj" />
+    <Project Path="samples/21-ai-search-hosted-agent/21-ai-search-hosted-agent.csproj" />
+    <Project Path="samples/22-blob-storage-hosted-agent/22-blob-storage-hosted-agent.csproj" />
+    <Project Path="samples/23-service-bus-hosted-agent/23-service-bus-hosted-agent.csproj" />
+    <Project Path="samples/24-application-insights-hosted-agent/24-application-insights-hosted-agent.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/DemoChecks/DemoChecks.csproj" />
+    <Project Path="tests/AzureToolChecks/AzureToolChecks.csproj" />
+    <Project Path="tests/HostedBasicsChecks/HostedBasicsChecks.csproj" />
   </Folder>
 </Solution>

@@ -1,0 +1,16 @@
+<!-- Harness offline de hosting y telemetria.
+     A. Crear ejecutable .NET. B. Enlazar helpers del test. C. Probar tools, workflow y exporter sin Azure. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\samples\11-tools-hosted-agent\11-tools-hosted-agent.csproj" />
+    <ProjectReference Include="..\..\samples\12-sequential-workflow-hosted-agent\12-sequential-workflow-hosted-agent.csproj" />
+    <ProjectReference Include="..\..\samples\24-application-insights-hosted-agent\24-application-insights-hosted-agent.csproj" />
+    <Compile Include="..\DemoChecks\ScriptedChatClient.cs" Link="ScriptedChatClient.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+**/bin
+**/obj
+**/.azure
+**/.git
+**/.env*
+**/secrets.json
+**/*.user
+**/*.pfx
+**/*.pem
+**/*.key
+tests
+*.pptx
+slides

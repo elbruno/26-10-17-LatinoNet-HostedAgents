@@ -1,3 +1,5 @@
+<!-- Harness offline de 01 a 09.
+     A. Crear ejecutable .NET. B. Referenciar las capacidades reales. C. Probarlas con IChatClient simulado. -->
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,10 +8,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\samples\04-demo\04-demo.csproj" />
-    <ProjectReference Include="..\..\samples\05-demo\05-demo.csproj" />
-    <ProjectReference Include="..\..\samples\06-demo\06-demo.csproj" />
-    <ProjectReference Include="..\..\samples\08-demo\08-demo.csproj" />
-    <ProjectReference Include="..\..\samples\09-demo\09-demo.csproj" />
+    <ProjectReference Include="..\..\samples\04-tools-MAF-agent\04-tools-MAF-agent.csproj" />
+    <ProjectReference Include="..\..\samples\05-structured-output-MAF-agent\05-structured-output-MAF-agent.csproj" />
+    <ProjectReference Include="..\..\samples\06-middleware-MAF-agent\06-middleware-MAF-agent.csproj" />
+    <ProjectReference Include="..\..\samples\08-sequential-workflow-MAF-agent\08-sequential-workflow-MAF-agent.csproj" />
+    <ProjectReference Include="..\..\samples\09-telemetry-MAF-agent\09-telemetry-MAF-agent.csproj" />
   </ItemGroup>
 </Project>

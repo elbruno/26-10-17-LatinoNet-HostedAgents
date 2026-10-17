@@ -1,0 +1,14 @@
+<!-- 10: servidor Responses que conserva el agente de 01.
+     A. Seleccionar SDK Web y .NET 10. B. Mantener User Secrets. C. Agregar integracion Foundry.Hosting. -->
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>latinonet-2026-hosted-agents-hello</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Agents.AI.Foundry.Hosting" Version="1.22.0-preview.260918.1" />
+    <PackageReference Include="Azure.AI.Projects" Version="3.0.0-beta.2" />
+  </ItemGroup>
+</Project>
